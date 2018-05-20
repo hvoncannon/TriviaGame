@@ -145,7 +145,7 @@ $("body").on("click", "button", function () {
         wrongAnswers++;
         questionsRemaining--;
         clearInterval(qTimer);
-        aDiv.html("Wrong Answer!" + "<div class='d-flex justify-content-center'>The correct answer was: " + questionsArray[questionsPosition].cA + "</div>" + "<div class='d-flex justify-content-center'>Questions Remaining: " + questionsRemaining + "</div>");
+        aDiv.html("<div class='d-flex justify-content-center'>Wrong Answer!</div>" + "<div class='d-flex justify-content-center'>The correct answer was: " + questionsArray[questionsPosition].cA + "</div>" + "<div class='d-flex justify-content-center'>Questions Remaining: " + questionsRemaining + "</div>");
         setTimeout(showResult, 4000);
     }
 
