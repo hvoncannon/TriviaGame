@@ -115,7 +115,7 @@ function newTimer() {
             wrongAnswers++;
             questionsRemaining--;
             aDiv.html('You ran out of time! That counts as a wrong answer ¯\\_(ツ)_/¯' + "<div class='d-flex justify-content-center>The correct answer was: " + questionsArray[questionsPosition].cA + "</div>" + "<div class='d-flex justify-content-center'>Questions Remaining: " + questionsRemaining + "</div>")
-            setTimeout(showResult, 5000);
+            setTimeout(showResult, 4000);
         }
         else if (time <= 0) {
             clearInterval(qTimer);
@@ -125,7 +125,7 @@ function newTimer() {
             questionsPosition++;
             setTimeout(function () {
                 showQuestion(questionsPosition)
-            }, 5000
+            }, 4000
             )
         }
     }
@@ -138,7 +138,7 @@ $("body").on("click", "button", function () {
         questionsRemaining--;
         clearInterval(qTimer);
         aDiv.html("<div class='d-flex justify-content-center'>Correct, you have finished the game!</div>");
-        setTimeout(showResult, 5000);
+        setTimeout(showResult, 4000);
     }
 
     else if ($(this).text() !== questionsArray[questionsPosition].cA && questionsPosition === 9) {
@@ -157,7 +157,7 @@ $("body").on("click", "button", function () {
         clearInterval(qTimer);
         setTimeout(function () {
             showQuestion(questionsPosition);
-        }, 5000);
+        }, 4000);
     }
 
     else if ($(this).text() !== questionsArray[questionsPosition].cA && $(this).text() !== "Play Now") {
@@ -168,7 +168,7 @@ $("body").on("click", "button", function () {
         clearInterval(qTimer);
         setTimeout(function () {
             showQuestion(questionsPosition)
-        }, 5000)
+        }, 4000)
     }
 
     else {
