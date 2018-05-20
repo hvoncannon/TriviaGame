@@ -98,13 +98,13 @@ var rightAnwers = 0;
 var qDiv = $("#questionDiv");
 var aDiv = $("#answersDiv");
 var tDiv = $("#timerDiv");
-var time = 10;
+var time = 30;
 //defining a global variable to hold our setInterval
 var qTimer;
 
 //this function starts a new timer, and ends the timer if the time runs out then pulls the new question
 function newTimer() {
-    time = 10;
+    time = 30;
     tDiv.html("<h5>" + time + "</h5>");
     qTimer = setInterval(timerFunction, 1000);
     function timerFunction() {
@@ -115,7 +115,7 @@ function newTimer() {
             wrongAnswers++;
             questionsRemaining--;
             aDiv.html('You ran out of time! That counts as a wrong answer ¯\\_(ツ)_/¯' + "<div class='d-flex justify-content-center>The correct answer was: " + questionsArray[questionsPosition].cA + "</div>" + "<div class='d-flex justify-content-center'>Questions Remaining: " + questionsRemaining + "</div>")
-            setTimeout(showResult, 3000);
+            setTimeout(showResult, 5000);
         }
         else if (time <= 0) {
             clearInterval(qTimer);
@@ -138,7 +138,7 @@ $("body").on("click", "button", function () {
         questionsRemaining--;
         clearInterval(qTimer);
         aDiv.html("<div class='d-flex justify-content-center'>Correct, you have finished the game!</div>");
-        setTimeout(showResult, 3000);
+        setTimeout(showResult, 5000);
     }
 
     else if ($(this).text() !== questionsArray[questionsPosition].cA && questionsPosition === 9) {
@@ -157,7 +157,7 @@ $("body").on("click", "button", function () {
         clearInterval(qTimer);
         setTimeout(function () {
             showQuestion(questionsPosition);
-        }, 3000);
+        }, 5000);
     }
 
     else if ($(this).text() !== questionsArray[questionsPosition].cA && $(this).text() !== "Play Now") {
@@ -168,7 +168,7 @@ $("body").on("click", "button", function () {
         clearInterval(qTimer);
         setTimeout(function () {
             showQuestion(questionsPosition)
-        }, 2000)
+        }, 5000)
     }
 
     else {
