@@ -146,7 +146,7 @@ $("body").on("click", "button", function () {
         questionsRemaining--;
         clearInterval(qTimer);
         aDiv.html("Wrong Answer!" + "<div class='d-flex justify-content-center'>The correct answer was: " + questionsArray[questionsPosition].cA + "</div>" + "<div class='d-flex justify-content-center'>Questions Remaining: " + questionsRemaining + "</div>");
-        showResult();
+        setTimeout(showResult, 4000);
     }
 
     else if ($(this).text() === questionsArray[questionsPosition].cA) {
